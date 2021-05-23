@@ -1,0 +1,150 @@
+@mixin heartbit-effect($size) {
+    @keyframes heartBitEffect {
+        0%{
+            height: $size;
+        }
+        50%{
+            height: $size - .2rem;
+        }
+        100%{
+            height: $size;
+        }
+    }
+
+    animation: heartBitEffect .5s alternate infinite;
+    
+}
+
+@mixin hover-icon-color($color) {
+     fill: lighten($color, 10%);
+}
+
+.card-big{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.651);
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+
+    &__content{
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        align-content: space-between;
+        flex-wrap: wrap;
+        padding: 2rem;
+        width: 90%;
+        min-height: 300px;
+        background-color: var(--color-theme-medium);
+        color: var(--color-theme-light-2);
+
+        &__image{
+        width: 40%;
+        object-fit: contain;
+        border-radius: 50%;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        }
+        
+        &__contact-name{
+            width: 100%;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+    
+        p{
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            &:not(:last-child){
+                margin-bottom: 1rem;
+            }
+        }
+        
+        &__icon{
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+            fill: rgb(223, 181, 181);
+        }
+    
+        .editing-menu{
+            align-self: center;
+            display: flex;
+            align-items: center;
+    
+            &__icon{
+                width: 3rem;
+                height: 2.5rem;
+                cursor: pointer;
+            }
+    
+            .favorite{
+                fill: #ffd700;
+                &:hover{
+                    @include hover-icon-color(#ffd700);
+                    // animation: deleting 1s alternate infinite;
+                    @include heartbit-effect(3rem);
+                }
+            }
+    
+            .delete{
+                fill: var(--color-red);
+                height: 2rem;
+                &:hover{
+                    @include hover-icon-color(red);
+                    @include heartbit-effect(1.8rem);
+                }    
+            }
+            
+            .edit{
+                fill: #f17e20;
+                &:hover{
+                    @include hover-icon-color(#f17e20);
+                    @include heartbit-effect(3rem);
+
+                }
+            }
+            
+            .phone{
+                fill: #adff2f;
+                height: 2rem;
+                &:hover{
+                    @include hover-icon-color(#adff2f);
+                    animation: calling 1s alternate infinite;
+
+                }
+            }
+        }
+        .close-icon{
+            position: absolute;
+            right: 1.3rem;
+            top: 1.3rem;
+            margin: 0;
+    
+        }
+    }
+}
+
+
+
+
+@keyframes calling {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
