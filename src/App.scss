@@ -1,0 +1,35 @@
+:root{
+    --color-theme-light: #4b89ab;
+    --color-theme-light-2: #7198ac;
+    --color-theme-medium: #204a60;
+    --color-theme-dark: #193849;
+    --color-theme-popup: #000000a6;
+    --color-red: #f64341;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+.App{
+    padding: 5rem 1.5rem;
+    background-color: var(--color-theme-dark);
+}
+
+.contactList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--color-theme-dark);
+}
