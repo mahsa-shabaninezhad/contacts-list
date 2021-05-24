@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import './ContactDetails.scss'
 
@@ -15,7 +15,7 @@ const ContactDetails = ({contactInfo, close}) => {
     const {name, email, phone, birthday, address, id, img} = contactInfo
     return (
         <div className="card-big" onClick={close}>
-            <div className='card-big__content'>
+            <div className='card-big__content' onClick={e => e.stopPropagation()}>
                 <Clear className="card-big__content__icon close-icon" onClick={close}/>
                 <img src={img} alt="" className="card-big__content__image" />
                 <div className="editing-menu">
