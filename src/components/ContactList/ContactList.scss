@@ -1,0 +1,44 @@
+.contactList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    background-color: var(--color-theme-dark);
+    color:var(--color-theme-light-2);
+    flex: 1;
+
+    &__view{
+        background-color: var(--color-theme-dark);
+        padding: 1rem 0;
+
+        & > *{
+            fill: currentColor;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        &--active{
+            color: #fff;
+        }        
+        
+        .list-view-icon{
+            margin-left: auto;
+            margin-right: 2rem;
+        }
+    }
+
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+        width: 100%;
+        height: calc(100vh - 10vw - 5rem - 5.5rem - 3rem);
+        overflow-y: auto;
+
+        &:hover::-webkit-scrollbar-thumb{
+            display: inline;
+        }
+    }
+}

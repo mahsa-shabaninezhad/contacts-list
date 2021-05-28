@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import './ContactDetails.scss'
 
@@ -11,17 +11,36 @@ import {ReactComponent as Email} from '../../images/email.svg'
 import {ReactComponent as Cake} from '../../images/cake.svg'
 import {ReactComponent as Clear} from '../../images/clear.svg'
 
-const ContactDetails = ({contactInfo, close}) => {
+const ContactDetails = ({contactInfo, onClose, onDelete, onEdit}) => {
     const {name, email, phone, birthday, address, id, img} = contactInfo
+
+    const handleDeleting = () =>{
+        onDelete(contactInfo.id)
+        onClose()
+    }
+
+    useEffect(() => {
+        document.body.addEventListener('keydown', handleEnterKey)
+        return () => {
+            document.body.removeEventListener('keydown', handleEnterKey)
+        }
+    }, [])
+
+    const handleEnterKey = (e) => {
+        if(e.keyCode === 13){
+            onClose()
+        }
+    }
+
     return (
-        <div className="card-big" onClick={close}>
+        <div className="card-big" onClick={onClose} onKeyDown={handleEnterKey}>
             <div className='card-big__content' onClick={e => e.stopPropagation()}>
-                <Clear className="card-big__content__icon close-icon" onClick={close}/>
+                <Clear className="card-big__content__icon close-icon" onClick={onClose}/>
                 <img src={img} alt="" className="card-big__content__image" />
                 <div className="editing-menu">
                     <Phone className="editing-menu__icon phone" title='Call' />
-                    <Delete className="editing-menu__icon delete" title='Delete'/>
-                    <Edit className="editing-menu__icon edit" title='Edit'/> 
+                    <Delete className="editing-menu__icon delete" title='Delete' onClick={handleDeleting}/>
+                    <Edit className="editing-menu__icon edit" title='Edit' onClick={() => onEdit(id)}/> 
                     <Favorite className="editing-menu__icon favorite" title='Favorite'/>
                 </div>
                 <h1 className="card-big__content__contact-name">{name}</h1>

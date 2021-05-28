@@ -14,7 +14,7 @@ const data = [
         phone: '(669)-352-2850',
         img: person1,
         birthday: '7/2/1955',
-        address: '9020 Paddock Way',
+        address: 'Paddock Way',
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ const data = [
         phone: '(624)-444-3877',
         img: person6,
         birthday: '8/5/1977',
-        address: '5374 Plum St',
+        address: 'Plum St',
     },
     {
         id: 3,
@@ -32,7 +32,7 @@ const data = [
         phone: '(083)-959-6064',
         img: person3,
         birthday: '5/1/1968',
-        address: '9693 Poplar Dr',
+        address: 'Poplar Dr',
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const data = [
         phone: '(865)-091-7190',
         img: person4,
         birthday: '7/2/1990',
-        address: '5548 Nowlin Rd',
+        address: 'Nowlin Rd',
     },
     {
         id: 5,
@@ -50,7 +50,7 @@ const data = [
         phone: '(710)-607-7584',
         img: person5,
         birthday: '3/5/1992',
-        address: '7992 Wheeler Ridge Dr',
+        address: 'Wheeler Ridge Dr',
     },
     {
         id: 6,
@@ -59,7 +59,7 @@ const data = [
         phone: '(862)-232-6749',
         img: person2,
         birthday: '3/6/1960',
-        address: '2389 E Center St',
+        address: 'E Center St',
     },
     {
         id: 7,
@@ -68,7 +68,7 @@ const data = [
         phone: '(119)-930-6021',
         img: person7,
         birthday: '12/1/1972',
-        address: '2178 Rolling Green Rd',
+        address: 'Rolling Green Rd',
     },
     {
         id: 8,
@@ -77,7 +77,7 @@ const data = [
         phone: '(860)-708-1806',
         img: person8,
         birthday: '8/7/1987',
-        address: '5791 Elgin St',
+        address: 'Elgin St',
     }
 ]
 

@@ -39,6 +39,7 @@
         flex-wrap: wrap;
         padding: 2rem;
         width: 90%;
+        max-width: 500px;
         min-height: 300px;
         background-color: var(--color-theme-medium);
         color: var(--color-theme-light-2);
@@ -86,7 +87,7 @@
             }
     
             .favorite{
-                fill: #ffd700;
+                fill: var(--color-yellow);
                 &:hover{
                     @include hover-icon-color(#ffd700);
                     // animation: deleting 1s alternate infinite;
@@ -104,7 +105,7 @@
             }
             
             .edit{
-                fill: #f17e20;
+                fill: var(--color-orange);
                 &:hover{
                     @include hover-icon-color(#f17e20);
                     @include heartbit-effect(3rem);
@@ -113,7 +114,7 @@
             }
             
             .phone{
-                fill: #adff2f;
+                fill: var(--color-green);
                 height: 2rem;
                 &:hover{
                     @include hover-icon-color(#adff2f);

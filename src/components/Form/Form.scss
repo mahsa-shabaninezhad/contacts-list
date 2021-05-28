@@ -1,0 +1,73 @@
+.form-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--color-theme-popup);
+
+    &__content{
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2rem;
+        width: 90%;
+        max-width: 500px;
+        min-height: 300px;
+        background-color: var(--color-theme-medium);
+        color: var(--color-theme-light-2);
+
+        &__img-box{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            @media screen and (max-width:530px) {
+                flex-direction: row;
+                width: 100%;
+            }
+        }
+
+        &__image{
+            width: 40%;
+            min-width: 130px;
+            object-fit: contain;
+            border-radius: 50%;
+            margin-right: 1rem;
+            margin-bottom: 2rem;
+            @media screen and (max-width:530px) {
+                min-width: 40%;
+            }
+        }
+
+        input[type="file"]{
+            width: 50%;
+            font-size: 10px;
+        }
+            
+        .save-icon{
+            width: 2.5rem;
+            height: 2.5rem;
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            fill: var(--color-green);
+        }
+
+        &__inputs{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @media screen and (max-width:530px) {
+                width: 100%;
+                
+            }
+        }
+    }
+}
